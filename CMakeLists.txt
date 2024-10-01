@@ -74,15 +74,15 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   )
-  
+
 # Install exec
 install(TARGETS
   theta_driver_node
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY include/ 
-  DESTINATION include/
+install(DIRECTORY include/ launch config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_export_include_directories(

@@ -47,7 +47,11 @@ colcon build --symlink-install
 Try it with:
 
 ```bash
-ros2 run theta_driver theta_driver_node 
+ros2 run theta_driver theta_driver_node
+```
+or
+```bash
+ros2 launch theta_driver theta_driver.launch.py
 ```
 
 And then you can use image_view package, rqt or rviz2 to see the published image.

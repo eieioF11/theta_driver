@@ -95,6 +95,7 @@ void ThetaDriver::publishImage(GstMapInfo map) {
     std::vector<unsigned char> values(rdata, (unsigned char*)rdata + dataLength);
     image->data = values;
     image_pub_->publish(std::move(image));
+    info_pub_->publish(camera_info_);
 }
 
 ThetaDriver::ThetaDriver(const rclcpp::NodeOptions& options)
@@ -114,7 +115,9 @@ ThetaDriver::~ThetaDriver() {
 }
 
 void ThetaDriver::onInit() {
-    image_pub_ = this->create_publisher<sensor_msgs::msg::Image>("image_raw", 1);
+    image_pub_ = this->create_publisher<sensor_msgs::msg::Image>("thetav/image_raw", 1);
+    info_pub_ = this->create_publisher<sensor_msgs::msg::CameraInfo>("thetav/camera_info", 1);
+    get_camera_param();
 
     declare_parameter<bool>("use4k", false);
     get_parameter("use4k", use4k_);
