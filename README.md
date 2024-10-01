@@ -16,27 +16,36 @@ ros2 run theta_driver theta_driver_node
 
 You need to install the libuvc and it's dependencies before using this package.
 
-1. <https://github.com/ricohapi/libuvc-theta>
+1. Install GStreamer-1.0.
+```
+sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio libgstreamer-plugins-base1.0-dev
+```
+2. <https://github.com/ricohapi/libuvc-theta>
+
+```bash
+git clone https://github.com/ricohapi/libuvc-theta.git
+cd libuvc-theta
+mkdir build
+cd build
+cmake ..
+make && sudo make install
+```
 
 You will also need the sample for the Theta-Z1
 
-2. <https://github.com/ricohapi/libuvc-theta-sample>
+3. clone
 
 To install the package:
 
 ```bash
-source /opt/ros/foxy/setup.bash
-mkdir -p theta_driver_ws/src
-cd theta_driver_ws
-git clone -b ros2_foxy https://github.com/JLBicho/theta_driver.git src/theta_driver
-git clone https://github.com/stella-cv/libuvc-theta-sample.git src/theta_driver/3rd/libuvc-theta-sample
-colcon build
+git clone https://github.com/eieioF11/theta_driver.git
+cd theta_driver
+git submodule update --init --recursive
 ```
 
 Try it with:
 
 ```bash
-source install/setup.bash
 ros2 run theta_driver theta_driver_node 
 ```
 
