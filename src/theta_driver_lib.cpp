@@ -79,6 +79,7 @@ void ThetaDriver::publishImage(GstMapInfo map) {
 
     auto image = std::make_unique<sensor_msgs::msg::Image>();
     image->header.stamp = this->get_clock()->now();
+    camera_info_.header.stamp = image->header.stamp;
     image->header.frame_id = camera_frame_;
     if (use4k_) {
         image->width = 3840;
