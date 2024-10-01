@@ -34,13 +34,14 @@ make && sudo make install
 You will also need the sample for the Theta-Z1
 
 3. clone
-
-To install the package:
-
-```bash
+  ```bash
 git clone https://github.com/eieioF11/theta_driver.git
 cd theta_driver
 git submodule update --init --recursive
+```
+4. build
+```bash
+colcon build --symlink-install
 ```
 
 Try it with:
