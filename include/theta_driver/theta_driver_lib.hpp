@@ -80,7 +80,7 @@ public:
     uvc_context_t* ctx_;
     bool use4k_ = false;
     std::string serial_ = "";
-    std::string camera_frame_ = "camera_link";
+    std::string camera_frame_ = "camera_rgb_optical_frame";
     std::string pipeline_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_pub_;
     rclcpp::Publisher<sensor_msgs::msg::CameraInfo>::SharedPtr info_pub_;
