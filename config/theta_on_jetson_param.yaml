@@ -1,0 +1,30 @@
+theta_driver:
+  ros__parameters:
+    pipeline: "appsrc name=ap ! queue ! h264parse ! nvv4l2decoder ! queue ! nvvidconv ! video/x-raw, format=BGRx ! videoconvert ! video/x-raw, format=RGB ! queue ! appsink name=appsink emit-signals=true"
+    camera_param:
+      image_width: 1920
+      image_height: 960
+      camera_name: thetav
+      camera_matrix:
+        rows: 3
+        cols: 3
+        data: [452.97016,   0.     , 932.16609,
+                0.     , 403.75627, 520.10583,
+                0.     ,   0.     ,   1.     ]
+      distortion_model: plumb_bob
+      distortion_coefficients:
+        rows: 1
+        cols: 5
+        data: [-0.133120, 0.011309, 0.009001, 0.012501, 0.000000]
+      rectification_matrix:
+        rows: 3
+        cols: 3
+        data: [1., 0., 0.,
+              0., 1., 0.,
+              0., 0., 1.]
+      projection_matrix:
+        rows: 3
+        cols: 4
+        data: [434.32685,   0.     , 689.02068,   0.     ,
+                0.     , 419.17151, 421.29719,   0.     ,
+                0.     ,   0.     ,   1.     ,   0.     ]
