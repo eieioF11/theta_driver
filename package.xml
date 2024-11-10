@@ -16,7 +16,7 @@
   <depend>cv_bridge</depend>
   <depend>libgstreamer1.0-dev</depend>
   <depend>libgstreamer-plugins-base1.0-dev</depend>
-  <depend>libusb-dev</depend>
+  <depend>libusb-1.0-dev</depend>
   <depend>libuvc_theta</depend>
   <depend>boost</depend>
 
