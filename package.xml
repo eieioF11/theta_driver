@@ -16,7 +16,8 @@
   <depend>cv_bridge</depend>
   <depend>libgstreamer1.0-dev</depend>
   <depend>libgstreamer-plugins-base1.0-dev</depend>
-  <depend>libuvc-dev</depend>
+  <depend>libusb-1.0-0-dev</depend>
+  <depend>libuvc-theta</depend>
   <depend>boost</depend>
 
   <exec_depend>ros2launch</exec_depend>
